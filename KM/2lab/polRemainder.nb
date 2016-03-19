@@ -1,0 +1,116 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3765,        107]
+NotebookOptionsPosition[      3454,         91]
+NotebookOutlinePosition[      3797,        106]
+CellTagsIndexPosition[      3754,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"polRemainder", "[", 
+    RowBox[{"p_", ",", "q_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"deg1", " ", "=", " ", 
+      RowBox[{"Exponent", "[", 
+       RowBox[{"p", ",", "x"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"deg2", "=", "  ", 
+      RowBox[{"Exponent", "[", 
+       RowBox[{"q", ",", "x"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"copyPol", " ", "=", " ", "p"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"deg1", "\[GreaterEqual]", "deg2"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"degDiff", " ", "=", " ", 
+         RowBox[{"deg1", "-", " ", "deg2"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"coef1", " ", "=", " ", 
+         RowBox[{"Coefficient", "[", 
+          RowBox[{"copyPol", ",", "x", ",", "deg1"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"coef2", " ", "=", " ", 
+         RowBox[{"Coefficient", "[", 
+          RowBox[{"q", ",", "x", ",", "deg2"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"rem", " ", "=", " ", 
+         RowBox[{
+          SuperscriptBox["x", 
+           RowBox[{"degDiff", " "}]], "*", " ", "q", " ", "*", " ", 
+          RowBox[{"coef1", "/", "coef2"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"copyPol", "=", " ", 
+         RowBox[{"PolynomialMod", "[", 
+          RowBox[{
+           RowBox[{"copyPol", "-", " ", "rem"}], ",", "2"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"deg1", " ", "=", " ", 
+         RowBox[{"Exponent", "[", 
+          RowBox[{"copyPol", ",", "x"}], "]"}]}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", 
+      RowBox[{"Expand", "[", "copyPol", "]"}], "]"}], ";"}], 
+    "\[IndentingNewLine]", ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"polRemainder", "[", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["x", "5"], " ", "+", " ", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["x", "3"]}], "  ", "+", " ", 
+      RowBox[{"4", "x"}]}], ",", " ", 
+     RowBox[{
+      SuperscriptBox["x", "2"], " ", "+", " ", "1"}]}], " ", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6666932344194603`*^9, 3.6666932552529964`*^9}, {
+  3.666693340305047*^9, 3.6666933436122527`*^9}, {3.666693416367463*^9, 
+  3.6666935343967714`*^9}, {3.6666936694407096`*^9, 3.666693705081172*^9}, {
+  3.6666938611207457`*^9, 3.666694249338134*^9}, {3.6666943375198927`*^9, 
+  3.66669435290532*^9}, {3.6666943831787734`*^9, 3.666694445288183*^9}, {
+  3.6673507746488147`*^9, 3.6673509087929354`*^9}}],
+
+Cell[BoxData["x"], "Print",
+ CellChangeTimes->{3.6666944225439434`*^9, 3.6673509513122177`*^9}]
+}, Open  ]]
+},
+WindowSize->{1200, 612},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2761, 63, 345, "Input"],
+Cell[3343, 87, 95, 1, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
